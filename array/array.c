@@ -54,11 +54,11 @@ void SetTab (TabInt Tin, TabInt *Tout)
 /* F.S. Tout berisi salinan Tin */
 /* Assignment THsl -> Tin */
 {
-    for (int i = IdxMin; i <= Tin.Neff; i++)
+    int i;
+    for (i = IdxMin; i <= IdxMax; i++)
     {
-       (*Tout).TI[i] == Tin.TI[i];
+       (*Tout).TI[i] = Tin.TI[i];
     }
-    
     // (*Tout).TI[i] == Tin.TI[i];
 }
 void SetEl (TabInt *T, IdxType i, ElType v){
@@ -68,7 +68,7 @@ void SetEl (TabInt *T, IdxType i, ElType v){
 /* F.S. Elemen T yang ke-i bernilai v */
 /* Mengeset nilai elemen tabel yang ke-i sehingga bernilai v */
 void SetNeff (TabInt *T, IdxType N){
-    (*T).TI[NbElmt(*T)] = N;
+    (*T).Neff = N;
 }
 /* I.S. T terdefinisi, sembarang */
 /* F.S. Nilai indeks efektif T bernilai N */
